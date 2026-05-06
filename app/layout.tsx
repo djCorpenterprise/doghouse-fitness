@@ -3,6 +3,7 @@ import { Cormorant, Spectral } from "next/font/google";
 import "./globals.css";
 import PromoBar from "@/components/PromoBar";
 import Nav from "@/components/Nav";
+import Footer from "@/components/Footer";
 
 const cormorant = Cormorant({
   subsets: ["latin"],
@@ -41,10 +42,19 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en" className={`${cormorant.variable} ${spectral.variable}`}>
-      <body style={{ background: "#F5EDD8", margin: 0 }}>
+      <body
+        style={{
+          background: "#F5EDD8",
+          margin: 0,
+          minHeight: "100vh",
+          display: "flex",
+          flexDirection: "column",
+        }}
+      >
         <PromoBar />
         <Nav />
-        {children}
+        <main style={{ flex: 1 }}>{children}</main>
+        <Footer />
       </body>
     </html>
   );
