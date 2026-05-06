@@ -624,7 +624,6 @@ export default function ApplyPage() {
                   fontStyle: "italic",
                   fontSize: 14,
                   color: "#6F6750",
-                  marginTop: 20,
                   margin: 0,
                   marginTop: 20,
                 }}
