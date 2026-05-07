@@ -94,7 +94,7 @@ export default function Footer() {
             }}
           >
             <Image
-              src="/dog-house-logo.jpg"
+              src="/dog-house-logo.png"
               alt="Dog House Fitness"
               width={110}
               height={88}
