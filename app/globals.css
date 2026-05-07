@@ -24,3 +24,55 @@ body {
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
 }
+
+/* ---------------------------------------------------------------- */
+/* Mobile responsive overrides                                      */
+/* Forces multi-column page grids to stack on narrow screens,       */
+/* without touching individual page files.                          */
+/* ---------------------------------------------------------------- */
+@media (max-width: 768px) {
+  /* Philosophy page: pillar label / body two-column grid */
+  .pillar-grid {
+    grid-template-columns: 1fr !important;
+    gap: 32px !important;
+  }
+
+  /* The House page: photo / bio two-column grids (both directions) */
+  .house-grid,
+  .house-grid-reverse {
+    grid-template-columns: 1fr !important;
+    gap: 32px !important;
+  }
+
+  /* On reverse layout sections (text-then-photo on desktop), put photo on
+     top so every section reads photo-first on mobile for visual rhythm */
+  .house-grid-reverse > div:first-child {
+    order: 2;
+  }
+  .house-grid-reverse > div:last-child {
+    order: 1;
+  }
+
+  /* Plans page: three-tier pricing grid */
+  .tiers-grid {
+    grid-template-columns: 1fr !important;
+  }
+
+  /* Remove the right-borders that were dividing the tiers horizontally;
+     replace with a top-border so they read as stacked sections */
+  .tier-card {
+    border-right: none !important;
+    border-top: 1px solid rgba(176, 122, 44, 0.35) !important;
+    padding: 48px 24px !important;
+  }
+  .tier-card:first-child {
+    border-top: none !important;
+  }
+}
+
+/* Tighter mobile tweaks for very narrow phones */
+@media (max-width: 420px) {
+  .tier-card {
+    padding: 40px 20px !important;
+  }
+}
