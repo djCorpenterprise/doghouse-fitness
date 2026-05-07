@@ -44,8 +44,7 @@ body {
     gap: 32px !important;
   }
 
-  /* On reverse layout sections (text-then-photo on desktop), put photo on
-     top so every section reads photo-first on mobile for visual rhythm */
+  /* Reverse layout: keep photo on top on mobile for visual rhythm */
   .house-grid-reverse > div:first-child {
     order: 2;
   }
@@ -53,13 +52,20 @@ body {
     order: 1;
   }
 
+  /* Cap bio photo width so it doesn't dominate the screen */
+  .house-grid > div:first-child,
+  .house-grid-reverse > div:last-child {
+    max-width: 280px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
   /* Plans page: three-tier pricing grid */
   .tiers-grid {
     grid-template-columns: 1fr !important;
   }
 
-  /* Remove the right-borders that were dividing the tiers horizontally;
-     replace with a top-border so they read as stacked sections */
+  /* Replace right-borders with top-borders for stacked tiers */
   .tier-card {
     border-right: none !important;
     border-top: 1px solid rgba(176, 122, 44, 0.35) !important;
@@ -74,5 +80,9 @@ body {
 @media (max-width: 420px) {
   .tier-card {
     padding: 40px 20px !important;
+  }
+  .house-grid > div:first-child,
+  .house-grid-reverse > div:last-child {
+    max-width: 240px;
   }
 }
