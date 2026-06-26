@@ -1,1 +1,6 @@
-{ "cleanUrls": true }
+{
+  "cleanUrls": true,
+  "framework": null,
+  "buildCommand": "echo done",
+  "outputDirectory": "."
+}
