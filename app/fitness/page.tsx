@@ -1,21 +1,11 @@
 import ProductCard from '@/components/ProductCard'
+import { FITNESS_PRODUCTS } from '@/lib/products'
 import type { Metadata } from 'next'
 
 export const metadata: Metadata = {
   title: 'Dog House Fitness — Coming Soon',
-  description: 'The first Dog House Fitness drop is almost here. Built different, made in limited runs. Hats drop first.',
+  description: 'Dog Days Collection 001. Built different, made in limited runs. Hats drop first.',
 }
-
-const PRODUCTS = [
-  { id: 'f_cap_black',  name: 'Rope Cap',       price: 44, img: '/images/f_cap_black.png', first: true  },
-  { id: 'f_cap_camo',   name: 'Camo Cap',        price: 44, img: '/images/f_cap_camo.png',  first: true  },
-  { id: 'f_tee',        name: 'Oversized Tee',   price: 48, img: '/images/f_tee.png',       first: false },
-  { id: 'f_zip',        name: 'Zip Hoodie',      price: 88, img: '/images/f_zip.png',       first: false },
-  { id: 'f_sweat',      name: 'Sweatpants',      price: 68, img: '/images/f_sweat.png',     first: false },
-  { id: 'f_beanie',     name: 'Beanie',           price: 28, img: '/images/f_beanie.png',    first: false },
-  { id: 'f_shaker',     name: 'Shaker Bottle',   price: 25, img: '/images/f_shaker.png',    first: false },
-  { id: 'f_duffle',     name: 'Duffle Bag',      price: 78, img: '/images/f_duffle.png',    first: false },
-]
 
 export default function FitnessPage() {
   return (
@@ -29,25 +19,41 @@ export default function FitnessPage() {
       {/* ANNOUNCE BAR */}
       <div className="announce-bar">
         <span className="announce-dot" />
-        <span className="announce-text">Coming Soon &nbsp;·&nbsp; Hats Dropping First</span>
+        <span className="announce-text">Dog Days — Drop 001 &nbsp;·&nbsp; Coming Soon &nbsp;·&nbsp; Hats Dropping First</span>
+      </div>
+
+      {/* COMPLETE KIT BANNER */}
+      <div className="kit-banner">
+        <div className="kit-banner-inner">
+          <div className="kit-left">
+            <div className="kit-label">Complete Kit</div>
+            <div className="kit-items">Tee · Zip Hoodie · Joggers · Tank · Beanie</div>
+          </div>
+          <div className="kit-right">
+            <span className="kit-price">$225</span>
+            <span className="kit-save">Save $42 vs individual</span>
+          </div>
+        </div>
       </div>
 
       {/* COLLECTION */}
       <div className="section-label">
         <span className="section-line" />
-        <h2>The Collection</h2>
+        <h2>Dog Days Collection</h2>
         <span className="section-line" />
       </div>
 
       <div className="pgrid">
-        {PRODUCTS.map(p => (
+        {FITNESS_PRODUCTS.map(p => (
           <ProductCard
             key={p.id}
             id={p.id}
+            slug={p.slug}
             name={p.name}
             price={p.price}
             img={p.img}
-            droppingFirst={p.first}
+            droppingFirst={p.droppingFirst}
+            href={`/fitness/${p.slug}`}
           />
         ))}
       </div>
