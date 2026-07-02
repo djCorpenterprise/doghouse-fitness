@@ -19,7 +19,7 @@ export const metadata: Metadata = {
     type: 'website',
     images: [
       {
-        url: '/images/og-image.jpg',
+        url: '/images/doghouse-og-v3.jpg',
         width: 1200,
         height: 630,
         alt: 'Dog House — Fitness & Golf',
@@ -30,7 +30,7 @@ export const metadata: Metadata = {
     card: 'summary_large_image',
     title: 'Dog House — Fitness & Golf',
     description: 'Loyalty. Discipline. Strength. One Brand. Two Worlds.',
-    images: ['/images/og-image.jpg'],
+    images: ['/images/doghouse-og-v3.jpg'],
   },
 }
 
